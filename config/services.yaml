@@ -20,5 +20,12 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    app.user.repository:
+        class: App\Infrastructure\User\Secondary\Repository\UserDoctrineRepository
+        public: true
+
+    App\Domain\User\Register\Register:
+        arguments: 
+            $repository: '@app.user.repository'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

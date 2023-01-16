@@ -1,0 +1,20 @@
+App\Domain\User\Model\User:
+    type: entity
+    id:
+      id:
+        type: guid
+        generator:
+          strategy: AUTO
+    fields:
+      email:
+        type: string
+        unqiue: true
+        length: 60
+      firstname:
+        type: string
+        length: 30
+      lastname:
+        type: string
+        length: 30
+      password:
+        type: string
